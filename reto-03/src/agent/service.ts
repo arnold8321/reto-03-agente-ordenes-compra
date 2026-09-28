@@ -74,11 +74,12 @@ export async function processMessage(message: string, pendingCase: string | null
   const caso = confirmation ? pendingCase : caseFromMessage(message);
   if (!caso) return { message: "Puedo procesar los casos del reto. Escribe, por ejemplo, “Procesa SOL-004”.", events: [], needsConfirmation: false, provider: "", model: "" };
   const result = await executeCase(caso, Boolean(confirmation));
-  let messageText = result.message;
-  try { messageText = await llmReply(adapter, message, result.message, result.events); } catch (error) {
+  try {
+  messageText = await llmReply(adapter, message, result.message, result.events);
+} catch (error) {
   console.error("LLM ERROR:", error instanceof Error ? error.message : String(error));
   messageText = `${result.message}\n\n[El modelo de lenguaje no respondió; se muestra el resultado determinístico de las herramientas.]`;
-  }
+}
   return { ...result, message: messageText, caseId: caso, provider: "", model: "" };
 }
 
