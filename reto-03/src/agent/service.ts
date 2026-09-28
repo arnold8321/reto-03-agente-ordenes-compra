@@ -75,7 +75,6 @@ export async function processMessage(message: string, pendingCase: string | null
   if (!caso) return { message: "Puedo procesar los casos del reto. Escribe, por ejemplo, “Procesa SOL-004”.", events: [], needsConfirmation: false, provider: "", model: "" };
   const result = await executeCase(caso, Boolean(confirmation));
   const messageText = result.message;
-}
   return { ...result, message: messageText, caseId: caso, provider: "", model: "" };
 }
 
