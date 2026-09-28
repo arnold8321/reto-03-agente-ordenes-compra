@@ -1,0 +1,27 @@
+:root { font-family: Inter, system-ui, sans-serif; color: #17202a; background: #f4f7f8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { max-width: 1180px; margin: 0 auto; padding: 28px; }
+header { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 22px; }
+.eyebrow { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #5c7378; }
+h1 { margin: 0; font-size: 28px; }
+.subtitle { color: #617177; margin-top: 8px; }
+.status { background: #e7ecee; padding: 8px 12px; border-radius: 999px; font-size: 12px; white-space: nowrap; }
+.status.online { background: #e5f4ed; color: #1e6546; }
+.layout { display: grid; grid-template-columns: 1.25fr .75fr; gap: 18px; }
+.panel { background: white; border: 1px solid #dce4e6; border-radius: 14px; box-shadow: 0 8px 28px rgba(20, 40, 50, .06); }
+.chat-panel { min-height: 650px; display: flex; flex-direction: column; }
+.messages { padding: 20px; flex: 1; overflow-y: auto; }
+.bubble { max-width: 86%; white-space: pre-wrap; padding: 12px 14px; border-radius: 12px; margin-bottom: 12px; line-height: 1.45; }
+.bubble.assistant { background: #f0f4f5; }
+.bubble.user { margin-left: auto; background: #dceff1; }
+.composer { display: flex; gap: 10px; padding: 14px; border-top: 1px solid #e5eaeb; }
+.composer input { flex: 1; border: 1px solid #cbd6d8; border-radius: 9px; padding: 12px; font-size: 15px; }
+button { border: 0; border-radius: 9px; padding: 0 20px; background: #357b84; color: white; font-weight: 600; cursor: pointer; }
+.tools-panel { padding: 18px; max-height: 650px; overflow-y: auto; }
+h2 { font-size: 16px; margin-top: 0; }
+.tool { border: 1px solid #e0e7e8; border-radius: 10px; padding: 10px; margin-bottom: 10px; }
+.tool strong { font-size: 13px; }
+.tool pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 11px; color: #4c5b60; max-height: 230px; overflow: auto; }
+.muted { color: #718084; font-size: 13px; }
+@media (max-width: 800px) { .layout { grid-template-columns: 1fr; } .chat-panel, .tools-panel { min-height: auto; } header { flex-direction: column; } }

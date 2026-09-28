@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agente OC SAP — Reto 03</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">Periferia IT Group · Reto 03</p>
+        <h1>Agente de Órdenes de Compra SAP</h1>
+        <p class="subtitle">Lee, valida, solicita confirmaciones y crea órdenes en SAP simulado.</p>
+      </div>
+      <span id="status" class="status">Conectando…</span>
+    </header>
+
+    <section class="layout">
+      <div class="panel chat-panel">
+        <div id="messages" class="messages"></div>
+        <form id="form" class="composer">
+          <input id="input" autocomplete="off" placeholder="Ej.: Procesa SOL-004" />
+          <button>Enviar</button>
+        </form>
+      </div>
+      <aside class="panel tools-panel">
+        <h2>Herramientas ejecutadas</h2>
+        <div id="tools"><p class="muted">Aquí aparecerán las llamadas y resultados de las herramientas.</p></div>
+      </aside>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
